@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ForkJoinPool;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -29,6 +30,7 @@ public class Main {
         };
 
         List<Car> list = Arrays.asList(cars);
+        Stream<Car> stream = list.stream();
 
         List<String> germanCars = list.stream()
                 .filter(x -> x.getOrigin().equals(Country.GERMANY))
@@ -65,8 +67,10 @@ public class Main {
                 .max().getAsInt();
         System.out.println(maxNameLength);
 
+        ForkJoinPool commonPool = ForkJoinPool.commonPool();
+        System.out.println("Threads: " + commonPool.getParallelism());
         int[] firstLengths = list.parallelStream()
-                .filter(w -> w.getName().length() % 2 == 0)
+                .filter(w -> w.getOrigin().equals(Country.JAPAN))
                 .map(Car::getName)
                 .mapToInt(String::length)
                 .sequential()
