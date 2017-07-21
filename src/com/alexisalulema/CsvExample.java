@@ -17,7 +17,7 @@ public class CsvExample {
         InputStream fStream = Main.class.getResourceAsStream("person.csv");
         InputStreamReader fReader = new InputStreamReader(fStream, StandardCharsets.UTF_8);
 
-        try (BufferedReader reader = new BufferedReader(fReader)) {}
+        //try (BufferedReader reader = new BufferedReader(fReader)) {}
     }
 }
 
