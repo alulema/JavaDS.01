@@ -8,6 +8,7 @@ public class Main {
 
         StreamsExample.run();
         CsvExample.run();
+        JsoupExample.run();
     }
 }
 
