@@ -6,9 +6,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        StreamsExample.run();
-        CsvExample.run();
-        JsoupExample.run();
+//        StreamsExample.run();
+//        CsvExample.run();
+//        JsoupExample.run();
+        JoineryExample.run();
     }
 }
 
