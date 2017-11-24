@@ -1,7 +1,5 @@
 package com.alexisalulema;
 
-import com.alexisalulema.utils.UrlUtils;
-import cyclops.async.Future;
 import cyclops.async.LazyReact;
 import joinery.DataFrame;
 import org.jooq.lambda.tuple.Tuple2;
@@ -14,11 +12,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
-
-import static com.alexisalulema.utils.UrlUtils.request;
 
 class JoineryExample {
     static void run() throws IOException {
@@ -50,7 +44,7 @@ class JoineryExample {
         String url = "https://www.kaggle.com/c/avito-duplicate-ads-detection/leaderboard";
         Optional<String> result = crawler.crawl(url);
         if (result.isPresent()) {
-            System.out.println("Successfuly crawled");
+            System.out.println("Successfully crawled");
             urls.put(url, result.get());
         }
         crawler.close();
